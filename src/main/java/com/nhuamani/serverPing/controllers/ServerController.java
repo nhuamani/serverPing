@@ -1,6 +1,8 @@
 package com.nhuamani.serverPing.controllers;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Map;
 import javax.validation.Valid;
 
@@ -17,6 +19,7 @@ import com.nhuamani.serverPing.models.Server;
 import static java.time.LocalDateTime.now;
 import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.OK;
+import static org.springframework.http.MediaType.IMAGE_PNG_VALUE;
 
 
 @RestController
@@ -89,5 +92,10 @@ public class ServerController {
                         .statusCode(OK.value())
                         .build()
         );
+    }
+
+    @GetMapping(path = "/image/{fileName}", produces = IMAGE_PNG_VALUE)
+    public byte[] getServerImage(@PathVariable("fileName") String fileName) throws IOException {
+        return Files.readAllBytes(Paths.get(System.getProperty("user.home") + "Downloads/images/" + fileName));
     }
 }
