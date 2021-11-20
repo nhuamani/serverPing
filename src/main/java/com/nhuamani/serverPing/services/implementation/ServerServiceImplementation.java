@@ -6,6 +6,9 @@ import java.util.Collection;
 
 import org.springframework.stereotype.Service;
 
+import static java.lang.Boolean.TRUE;
+import static org.springframework.data.domain.PageRequest.of;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -41,22 +44,27 @@ public class ServerServiceImplementation implements ServerService {
 
     @Override
     public Collection<Server> list(int limit) {
-        return null;
+        log.info("Fetching all servers");
+        return serverRepository.findAll(of(0,limit)).toList();
     }
 
     @Override
     public Server get(Long id) {
-        return null;
+        log.info("Fetching server by ID: {}", id);
+        return serverRepository.findById(id).get();
     }
 
     @Override
     public Server update(Server server) {
-        return null;
+        log.info("Updating server: {}", server.getName());
+        return serverRepository.save(server);
     }
 
     @Override
     public Boolean delete(Long id) {
-        return null;
+        log.info("Deleting server by ID: {}", id);
+        serverRepository.deleteById(id);
+        return TRUE;
     }
 
     private String setServerImageUrl() {
