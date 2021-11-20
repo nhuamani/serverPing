@@ -1,0 +1,19 @@
+server:
+  # Default :8080
+  port: 80
+spring:
+  datasource:
+    password:
+    # Antes Crear la DB en localhost
+    url: jdbc:mysql://localhost:3306/db_serverpingip
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: create
+      show_sql: true
+      format_sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        format_sql: true
+    show-sql: true
