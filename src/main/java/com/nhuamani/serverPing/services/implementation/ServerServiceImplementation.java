@@ -3,8 +3,10 @@ package com.nhuamani.serverPing.services.implementation;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.util.Collection;
+import java.util.Random;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import static java.lang.Boolean.TRUE;
 import static org.springframework.data.domain.PageRequest.of;
@@ -68,6 +70,7 @@ public class ServerServiceImplementation implements ServerService {
     }
 
     private String setServerImageUrl() {
-        return null;
+        String[] imageNames = { "Server1.png", "Server2.png", "Server3.png", "Server4.png" };
+        return ServletUriComponentsBuilder.fromCurrentContextPath().path("/server/image/" + imageNames[new Random().nextInt(4)]).toUriString();
     }
 }
