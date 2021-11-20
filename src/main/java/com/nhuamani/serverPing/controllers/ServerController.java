@@ -26,6 +26,7 @@ import static org.springframework.http.MediaType.IMAGE_PNG_VALUE;
 @RequestMapping("/servers")
 @RequiredArgsConstructor
 public class ServerController {
+
     private final ServerServiceImplementation serverService;
 
     @GetMapping("/list")
@@ -37,6 +38,7 @@ public class ServerController {
                         .message("Servers retrieved")
                         .status(OK)
                         .statusCode(OK.value())
+                        .developerMessage("This is my message to DEV")
                         .build()
         );
     }
