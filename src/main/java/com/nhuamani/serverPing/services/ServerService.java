@@ -1,9 +1,10 @@
 package com.nhuamani.serverPing.services;
 
-import com.nhuamani.serverPing.models.Server;
-
 import java.io.IOException;
 import java.util.Collection;
+
+import com.nhuamani.serverPing.models.Server;
+
 
 public interface ServerService {
     Server create(Server server);

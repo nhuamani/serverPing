@@ -8,9 +8,6 @@ import java.util.Random;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import static java.lang.Boolean.TRUE;
-import static org.springframework.data.domain.PageRequest.of;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -18,6 +15,9 @@ import com.nhuamani.serverPing.models.Server;
 import com.nhuamani.serverPing.services.ServerService;
 import com.nhuamani.serverPing.repository.ServerRepository;
 import com.nhuamani.serverPing.enums.Status;
+
+import static java.lang.Boolean.TRUE;
+import static org.springframework.data.domain.PageRequest.of;
 
 
 @RequiredArgsConstructor
