@@ -23,7 +23,7 @@ import static org.springframework.http.MediaType.IMAGE_PNG_VALUE;
 
 
 @RestController
-@RequestMapping("/servers")
+@RequestMapping("/api/servers")
 @RequiredArgsConstructor
 public class ServerController {
 

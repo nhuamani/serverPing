@@ -29,7 +29,7 @@ public class CorsConfig {
         corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
 
         UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
-        urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
+        urlBasedCorsConfigurationSource.registerCorsConfiguration("/api/**", corsConfiguration);
 
         return new CorsFilter(urlBasedCorsConfigurationSource);
     }
