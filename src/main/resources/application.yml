@@ -17,3 +17,6 @@ spring:
         dialect: org.hibernate.dialect.MySQL5Dialect
         format_sql: true
     show-sql: true
+setting:
+  allowed:
+    origin: http://localhost:4200
