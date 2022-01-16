@@ -1,12 +1,9 @@
 package com.nhuamani.serverPing.models;
 
 import java.util.Date;
-import java.util.UUID;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-
-import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.*;
 
