@@ -33,16 +33,7 @@ public class ServerController {
     @GetMapping("/list")
     public ResponseEntity<Response> getServers() throws InterruptedException {
         TimeUnit.SECONDS.sleep(3);
-        return ResponseEntity.ok(
-                Response.builder()
-                        .timeStamp(now())
-                        .data(Map.of("servers", serverService.list(30)))
-                        .message("Servers retrieved")
-                        .status(OK)
-                        .statusCode(OK.value())
-                        .developerMessage("This is my message to DEV")
-                        .build()
-        );
+        throw new InterruptedException("Something went wrong");
     }
 
     @GetMapping("/ping/{ipAddress}")
